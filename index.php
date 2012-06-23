@@ -67,6 +67,7 @@ function updateUser($id) {
 		$db = getConnection();
 		$stmt = $db->prepare($sql);  
 		$stmt->bindParam("name", $user->name);
+		$stmt->bindParam("id", $user->id);
 		$stmt->execute();
 		$db = null;
 		echo json_encode($user); 
